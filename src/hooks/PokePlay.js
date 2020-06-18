@@ -29,7 +29,6 @@ function PokeList (props) {
 
     return (
         <div className='play-pannel'>
-            <Music/>
             <div className={isWinner!==undefined ? 'top-div top-div-active' : 'top-div'}>
                 <TeamB/>
                 {!gameStart && <p className='remark'>Choose Three Pokemons</p>}    
@@ -37,6 +36,7 @@ function PokeList (props) {
                         <h1 className='text-shadow' style={{color: isWinner===true && 'var(--yellow)'}}>{isWinner ? 'WINNER!!!!!!!!' : 'LOSER!!!!!!!!'}</h1>
                             <button className="replayBtn" onClick={replay}><i className="fas fa-redo"></i></button>
                         </div>}
+                        <Music/>
                 <TeamA/>
             </div>
             <div className='play-zone'>
@@ -44,6 +44,7 @@ function PokeList (props) {
                 <CardsDiv/>
                 {!gameStart && <Pagination/>}
             </div>
+            
     </div>
     )
 }

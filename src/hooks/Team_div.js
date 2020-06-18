@@ -1,4 +1,4 @@
-import React from 'react';;
+import React from 'react';
 
 const TeamDiv=(props)=>{
     
@@ -7,7 +7,7 @@ const TeamDiv=(props)=>{
             <h2>{props.isWinner!==undefined && props.hand}</h2>
             <p>{props.isWinner!==undefined && `total experience: ${props.exp}`}</p>
             {props.team.map(t=>
-                <div key={`team${t.name}`} className='card'>
+                <div key={`${props.hand}${t.name}`} className='card'>
                     <img src={t.src} alt={t.name} className={t.isWinner!==undefined ? 'teamDiv-img-active': ''}/>
                     <p className='exp'>{props.isWinner!==undefined && `exp:${t.exp}`}</p>
                 </div>
