@@ -20,16 +20,20 @@ function GameApp(props) {
     if(loading) return <div className='loader-wrapper'><div className='loader'></div></div>;
 
     function openFullscreen() {
-      const elem = document.querySelector(".GameApp");
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
-      }
+        if(window.screen.availWidth>900){
+         const elem = document.querySelector(".GameApp"); 
+         if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+          }    
+        } else {
+          console.log('screen size under 720px')
+        }
     }
    
     return(
@@ -41,7 +45,8 @@ function GameApp(props) {
                   <Route exact path='/' component={routeProps=><Home stuff={routeProps} openFullscreen={openFullscreen}/>} />
                   <Route exact path='/pokeplay' render={()=><PokePlay/>}/>
                   <Route exact path='/scoresheet' component={ScoreSheet} />                
-                  <Route exact path='/scoresheet/detail/:round' component={ScoreDetail} />   <Route render={()=><h1>error not found</h1>} />
+                  <Route exact path='/scoresheet/detail/:round' component={ScoreDetail} />   
+                  <Route component={routeProps=><Home stuff={routeProps} openFullscreen={openFullscreen}/>} />
               </Switch> 
           </Router>    
       </div>

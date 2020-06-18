@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 
-import Poke_card from './Poke_card';
+import PokeCardFormate from './PokeCardFormate';
 
 import { PokeListContext } from '../contexts/PokelistContext';
 import {TeamContext} from '../contexts/TeamContext';
 
 function CardsDiv () {
-    const {setCurUrl, setGameStart, pokes, setPokes, setSearch, perPokes, setPerPokes, totalPokes} = useContext(PokeListContext);
+    const {setCurUrl, setGameStart, pokes, setPokes, setSearch, perPokes} = useContext(PokeListContext);
     const {isWinner,team, setTeam, teamA } = useContext(TeamContext);
 
     function choosePoke(id){
@@ -38,7 +38,7 @@ function CardsDiv () {
         <section className={pokes.length> perPokes ? 'pokesDiv scroll-active' : 'pokesDiv'}>
             {isWinner===undefined && 
                     pokes.map((poke)=>{
-                        return <Poke_card
+                        return <PokeCardFormate
                             key={poke.id}
                             id={poke.id}
                             src={poke.src}

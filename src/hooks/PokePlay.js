@@ -3,7 +3,7 @@ import React, {useContext} from 'react';
 import Pagination from './Pagination';
 import {TeamA, TeamB} from './Team';
 import CardsDiv from './CardsDiv';
-import Music from './Music';
+import Music from './audio/Music';
 import './PokePlay.scss';
 
 

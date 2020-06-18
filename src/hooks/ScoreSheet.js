@@ -2,7 +2,7 @@ import React, { useContext} from 'react';
 import uuid from 'uuid';
 
 import {ScoreContext} from '../contexts/ScoreContext';
-import Score_round from './Score_round'
+import ScoreRound from './Score_round'
 import './ScoreSheet.scss';
 
 function ScoreSheet(props){
@@ -27,7 +27,7 @@ function ScoreSheet(props){
                         <ul className='data-div'>
                             {scores.map((score, index)=>{
                                 return (
-                                    <Score_round
+                                    <ScoreRound
                                         id={index}
                                         yourScore={score.yourScore}
                                         dealerScore={score.dealerScore}

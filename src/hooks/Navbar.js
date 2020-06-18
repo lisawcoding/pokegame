@@ -1,11 +1,9 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {
-    BrowserRouter as Router,
     NavLink,
     withRouter
 } from "react-router-dom";
 
-import {TeamContext} from '../contexts/TeamContext';
 import SearchBar from './SearchBar';
 import './Navbar.scss';
 
@@ -13,7 +11,7 @@ import './Navbar.scss';
 
 function Navbar (props){
     
-    const {isWinner, setIsWinner, setTeam, setTeamA, setTeamB, gameStart } = useContext(TeamContext);
+    // const {isWinner, setIsWinner, setTeam, setTeamA, setTeamB, gameStart } = useContext(TeamContext);
 
     return (
         <>
@@ -21,9 +19,9 @@ function Navbar (props){
             <nav id='nav'>
                 {props.location.pathname==='/pokeplay' ? <SearchBar/> : <div></div>}
                 <ul ref={props.fullscreenModal}>
-                    <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >[]
+                    {/* <button className='btn btn-animate tooltip fullscreenBtn' onClick={props.openFullscreen} >[]
                         <span className="tooltiptext">full screen</span>
-                    </button>
+                    </button> */}
                     <NavLink exact className='btn btn-white btn-animate tooltip' activeClassName='active-link' to='/' data-lan='tab'>
                         <i className="fas fa-home"></i><span className="tooltiptext">home</span>
                         </NavLink>

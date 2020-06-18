@@ -1,6 +1,6 @@
 import React from 'react';;
 
-const Team_div=(props)=>{
+const TeamDiv=(props)=>{
     
     return(
         <section className='teamDiv'>
@@ -16,4 +16,4 @@ const Team_div=(props)=>{
     )
 }
 
-export default Team_div;
+export default TeamDiv;

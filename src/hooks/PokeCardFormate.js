@@ -2,7 +2,7 @@
 import React, {useContext} from 'react';
 import { TeamContext } from '../contexts/TeamContext';
 
-const Poke_card=(props)=>{
+const PokeCardFormate=(props)=>{
     const {team} =useContext(TeamContext);
 
     if(team.length>0){
@@ -25,7 +25,7 @@ const Poke_card=(props)=>{
                             <h2 className='name'>{props.name}</h2>
                     </div>
                     <div className='flip-card-back'>
-                            <img src={props.src_back}/>
+                            <img src={props.src_back} alt={props.name}/>
                     </div>
                 </div>
             </div>            
@@ -33,4 +33,4 @@ const Poke_card=(props)=>{
     )
 }
 
-export default Poke_card;
+export default PokeCardFormate;

@@ -5,7 +5,7 @@ import {TeamContext} from '../contexts/TeamContext'
 import './SearchBar.scss'
 
 const SearchBar=()=>{
-    const {search, setSearch, pokes, perPokes}=useContext(PokeListContext);
+    const {search, setSearch, pokes }=useContext(PokeListContext);
     const {team, setTeamA}=useContext(TeamContext);
 
     if(search.length>0 && pokes.length<1) {

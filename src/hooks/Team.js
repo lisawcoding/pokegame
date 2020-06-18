@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react';
 import {TeamContext} from '../contexts/TeamContext';
 import {PokeListContext} from '../contexts/PokelistContext';
-import Team_div from './Team_div';
+import TeamDiv from './Team_div';
 
 
 export const TeamA=()=>{
     const { team, teamB, setTeamB, isWinner, setIsWinner }  = useContext(TeamContext);
-    const { pokes, gameStart, totalPokes } = useContext(PokeListContext);
+    const { pokes, gameStart } = useContext(PokeListContext);
 
     const exp1=team.reduce((exp, poke)=>exp+poke.exp, 0);
 
@@ -45,7 +45,7 @@ export const TeamA=()=>{
   })
 
     return(                                                       
-        <Team_div 
+        <TeamDiv 
             hand={'your hand'}
             isWinner={isWinner}
             exp={exp1}
@@ -59,7 +59,7 @@ export function TeamB(props){
     const exp2=teamB.reduce((exp, poke)=>exp+poke.exp, 0);
 
     return (
-        <Team_div 
+        <TeamDiv 
             hand={"dealer's hand"}
             isWinner={isWinner}
             exp={exp2}
