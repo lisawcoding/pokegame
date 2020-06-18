@@ -91,11 +91,11 @@
     justify-content: space-between;
     height: 6em;
     width: 92vh;
-    min-width: 720px;
+    // min-width: 670px;
   }
 }
 .play-zone { 
-    min-width: 720px;
+    // min-width: 720px;
     margin: 0 auto;
     width: 92vh;
     position: relative;
@@ -221,23 +221,3 @@
   padding: 0 1em 0 0;
   max-height: 70vh;
 }
-
-
-
-
-// .GameApp {
-//   // width: 1200px;
-//   margin: 0 auto;
-//   border: 1px solid gold;
-//   background: pink;
-// }
-// .play-pannel {
-//   // width: 92vh;
-//   width: 760px;
-//   border: 3px dashed green;
-//   .play-zone {
-//     width: 100%;
-//     border: 2px dotted hotpink;
-//     min-width: unset;
-//   }
-// }
